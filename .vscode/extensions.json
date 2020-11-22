@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "jakebecker.elixir-ls",
+        "pgourlain.erlang",
+        "redvanworkshop.explorer-exclude-vscode-extension",
+        "codezombiech.gitignore",
+        "ms-vsliveshare.vsliveshare",
+        "ms-vsliveshare.vsliveshare-audio",
+        "hackwaly.ocaml",
+        "jaredly.reason-vscode",
+        "stylelint.vscode-stylelint",
+        "redhat.vscode-yaml"
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.bs.js": true,
+        "**/build": true,
+        "**/dist": true,
+        "**/node_modules": true,
+        "**/.vpn": true,
+        "api/deps": true,
+        "api/_build": true,
+        "api/.elixir_ls": true,
+        "**/.merlin": true
+    },
+    "reason_language_server.format_width": 120,
+    "editor.formatOnSave": true,
+    "elixirLS.projectDir": "api"
+}
