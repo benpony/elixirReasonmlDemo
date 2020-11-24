@@ -2,6 +2,7 @@ defmodule BlogApiWeb.Router do
   use BlogApiWeb, :router
 
   pipeline :api do
+    plug(CORSPlug)
     plug(BlogApiWeb.Auth.BearerAuthPipeline)
     plug(BlogApiWeb.Plugs.GraphQLContext)
   end

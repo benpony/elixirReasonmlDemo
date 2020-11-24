@@ -15,7 +15,7 @@
         "api/.elixir_ls": true,
         "**/.merlin": true
     },
-    "reason_language_server.format_width": 120,
+    "elixirLS.projectDir": "api",
     "editor.formatOnSave": true,
-    "elixirLS.projectDir": "api"
+    "reason_language_server.format_width": 120,
 }
