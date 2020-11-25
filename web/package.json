@@ -1,35 +1,44 @@
 {
-  "name": "web",
-  "version": "0.1.0",
-  "scripts": {
-    "build": "bsb -make-world",
-    "start": "bsb -make-world -w -ws _ ",
-    "clean": "bsb -clean-world",
-    "server": "moduleserve ./ --port 8000",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "BuckleScript",
-    "ReasonReact",
-    "reason-react"
-  ],
-  "author": "",
-  "license": "MIT",
-  "dependencies": {
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "reason-apollo": "^0.20.0",
-    "reason-react": ">=0.7.1"
-  },
-  "devDependencies": {
-    "@baransu/graphql_ppx_re": "^0.7.1",
-    "bs-platform": "^8.3.3",
-    "moduleserve": "^0.9.0"
-  },
-  "eslintConfig": {
-    "extends": "react-app",
-    "rules": {
-      "default-case": "off"
+    "name": "web",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "re:build": "bsb -make-world -clean-world",
+        "re:watch": "bsb -make-world -clean-world -w"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.11.4",
+        "@testing-library/react": "^11.1.0",
+        "@testing-library/user-event": "^12.1.10",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-scripts": "4.0.1",
+        "reason-react": "0.9.1",
+        "web-vitals": "^0.2.4"
+    },
+    "devDependencies": {
+        "bs-platform": "8.3.3"
     }
-  }
 }

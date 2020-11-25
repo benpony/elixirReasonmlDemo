@@ -1,0 +1,26 @@
+g_root = /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web
+rule astj
+  command = /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform/darwin/bsc.exe  -bs-v 8.3.3 -bs-jsx 3 -bs-super-errors -bs-ast -o $out $i
+o src/App.ast : astj $g_root/src/App.re
+rule deps
+  command = /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform/darwin/bsb_helper.exe -hash 905e42677ed80abeebf762cce9448029 -bs-ns Blogdemo $in
+  restat = 1
+o src/App.d : deps src/App.ast
+rule mij
+  command = /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform/darwin/bsc.exe -bs-ns Blogdemo -I . -I src/Login -I src -I /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-react/lib/ocaml  -bs-super-errors -bs-package-name blogdemo -bs-package-output es6:$in_d:.bs.js -o $out $i
+  dyndep = 1
+  restat = 1
+o src/App-Blogdemo.cmj src/App-Blogdemo.cmi ../../src/App.bs.js : mij src/App.ast
+o src/Login/Login.ast : astj $g_root/src/Login/Login.re
+o src/Login/Login.d : deps src/Login/Login.ast
+o src/Login/Login-Blogdemo.cmj src/Login/Login-Blogdemo.cmi ../../src/Login/Login.bs.js : mij src/Login/Login.ast
+o src/Login/NotFound.ast : astj $g_root/src/Login/NotFound.re
+o src/Login/NotFound.d : deps src/Login/NotFound.ast
+o src/Login/NotFound-Blogdemo.cmj src/Login/NotFound-Blogdemo.cmi ../../src/Login/NotFound.bs.js : mij src/Login/NotFound.ast
+o src/Login/Register.ast : astj $g_root/src/Login/Register.re
+o src/Login/Register.d : deps src/Login/Register.ast
+o src/Login/Register-Blogdemo.cmj src/Login/Register-Blogdemo.cmi ../../src/Login/Register.bs.js : mij src/Login/Register.ast
+rule build_package
+  command = /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform/darwin/bsc.exe -w -49 -color always -no-alias-deps  $i
+  restat = 1
+o Blogdemo.cmi : build_package Blogdemo.mlmap
