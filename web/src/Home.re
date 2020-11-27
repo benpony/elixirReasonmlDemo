@@ -11,9 +11,9 @@ module GetBlogPosts = [%graphql {|
 
 [@react.component]
 let make = () => {
-  let (blogPosts, setBlogPosts) = React.useState(_ => [||]);
-
   let (posts, _) = useQuery(GetBlogPosts.definition);
+
+  let (blogPosts, setBlogPosts) = React.useState(_ => [||]);
 
   React.useEffect1(
     () => {
