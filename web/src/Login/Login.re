@@ -1,2 +1,2 @@
 [@react.component]
-let make = () => <div> {"Hello Login" |> ReasonReact.string} </div>;
+let make = () => <div> {"Hello Login!" |> ReasonReact.string} </div>;
