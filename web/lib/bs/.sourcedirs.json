@@ -1,1 +1,0 @@
-{ "dirs" : [ "src" , "src/Login" ] , "pkgs" : [ [ "bs-platform" , "/Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform" ] , [ "reason-react" , "/Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-react" ] ] , "generated" : [] }
