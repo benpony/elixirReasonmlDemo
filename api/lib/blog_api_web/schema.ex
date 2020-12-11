@@ -46,15 +46,18 @@ defmodule BlogApiWeb.Schema do
       resolve(fn
         %{title: title, body: body},
         %{context: %{current_user: _user = %BlogApi.Accounts.User{id: user_id}}} ->
+
           BlogApi.Blog.create_post(%{title: title, body: body, author_id: user_id})
 
-        _args, _info ->
-          {:error, "You need to authentify to create a blog post"}
+        _args, _info -> {
+          :error,
+          "You need to authentify to create a blog post"
+        }
       end)
     end
 
     field :user_login, type: :session do
-      arg(:email, non_null(:string))
+      arg(:name, non_null(:string))
       arg(:password, non_null(:string))
 
       resolve(fn args, _info ->

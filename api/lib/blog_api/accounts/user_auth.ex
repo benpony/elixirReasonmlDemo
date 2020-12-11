@@ -5,10 +5,10 @@ defmodule BlogApi.Accounts.UserAuth do
   Return the user if the authentication parameters are valid (the password matches).
   If the parameters are invalid, return an error.
   """
-  @spec authenticate(%{login: String.t(), password: String.t()}) ::
+  @spec authenticate(%{name: String.t(), password: String.t()}) ::
           {:ok, User} | {:error, String.t()}
   def authenticate(params) do
-    user = BlogApi.Repo.get_by(User, login: params.login)
+    user = BlogApi.Repo.get_by(User, name: params.name)
 
     case check_password(user, params.password) do
       true -> {:ok, user}

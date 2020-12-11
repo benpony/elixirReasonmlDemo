@@ -13,28 +13,32 @@ module GetBlogPosts = [%graphql {|
 let make = () => {
   let (posts, _) = useQuery(GetBlogPosts.definition);
 
-  let (blogPosts, setBlogPosts) = React.useState(_ => [||]);
+  let (blogPosts, setBlogPosts) = React.useState(() => [||]);
 
   React.useEffect1(
     () => {
       switch (posts) {
-      | Loading =>
-        Js.log("LOADING");
-        None;
+      | Loading => Js.log("LOADING")
       | Data(data) =>
-        Js.log(data);
-        None; // setBlogPosts(data)
-      | NoData =>
-        Js.log("NO DATA?");
-        None;
-      | Error(_) =>
-        Js.log("ERROR");
-        None;
-      }
+        // [%debugger];
+        let posts = data##blogPosts
+        setBlogPosts(_ => posts);
+        Js.log(posts);
+      | NoData => Js.log("NO DATA?")
+      | Error(_) => Js.log("ERROR")
+      };
+
+      None;
     },
     [|posts|],
   );
 
-  // %debugger
-  <div> {"hello  home" |> React.string} </div>;
+  <>
+    <div> ("hello  home" |> React.string) </div>
+    <div>
+        (
+            (blogPosts |> Array.map((post) => <div> (post##title |> React.string) </div> )) |> React.array
+        )
+    </div>
+  </>;
 };
