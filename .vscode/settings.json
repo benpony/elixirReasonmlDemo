@@ -16,6 +16,8 @@
         "**/.merlin": true
     },
     "elixirLS.projectDir": "api",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false,
     "reason_language_server.format_width": 120,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.showTabs": true
 }

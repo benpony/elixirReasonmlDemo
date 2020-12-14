@@ -1,0 +1,23 @@
+####{BSB GENERATED: NO EDIT
+B lib/bs
+FLG -open Blogdemo
+FLG -ppx /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/@baransu/graphql_ppx_re/ppx
+FLG -ppx '/Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform/darwin/bsc.exe -as-ppx -bs-jsx 3'
+S /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform/lib/ocaml
+B /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/bs-platform/lib/ocaml
+FLG -w +a-4-9-20-40-41-42-50-61-102
+S /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-react/lib/ocaml
+B /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-react/lib/ocaml
+S /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-apollo-hooks/lib/ocaml
+B /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-apollo-hooks/lib/ocaml
+S /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-apollo/lib/ocaml
+B /Users/roeibuxbaum/workspace/projects/elixirReasonmlDemo/web/node_modules/reason-apollo/lib/ocaml
+S src
+B lib/bs/src
+S src/Login
+B lib/bs/src/Login
+S src/TikTacToe
+B lib/bs/src/TikTacToe
+S src/Blogs
+B lib/bs/src/Blogs
+####BSB GENERATED: NO EDIT}

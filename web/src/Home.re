@@ -12,7 +12,6 @@ module GetBlogPosts = [%graphql {|
 [@react.component]
 let make = () => {
   let (posts, _) = useQuery(GetBlogPosts.definition);
-
   let (blogPosts, setBlogPosts) = React.useState(() => [||]);
 
   React.useEffect1(
@@ -20,7 +19,6 @@ let make = () => {
       switch (posts) {
       | Loading => Js.log("LOADING")
       | Data(data) =>
-        // [%debugger];
         let posts = data##blogPosts
         setBlogPosts(_ => posts);
         Js.log(posts);
@@ -29,16 +27,37 @@ let make = () => {
       };
 
       None;
-    },
-    [|posts|],
-  );
+    }, [|posts|],);
 
+    <>
+        <div> ("hello  home" |> React.string) </div>
+        <div>
+            (
+                blogPosts
+                    |> Array.map(post => <div> (post##title |> React.string) </div>)
+                    |> React.array
+            )
+        </div>
+    </>;
+};
+
+
+[@react.component]
+let make = () => {
   <>
-    <div> ("hello  home" |> React.string) </div>
-    <div>
-        (
-            (blogPosts |> Array.map((post) => <div> (post##title |> React.string) </div> )) |> React.array
-        )
+    <div style=(ReactDOM.Style.make(
+        ~backgroundColor="green",
+        ~fontSize="68px"
+        ,~height="40px", ()))/>
+
+    <div style=(ReactDOM.Style.make(
+        ~display="flex",
+        ~height="100%",
+        ~alignItems="center",
+        ~margin="5%",
+        ~justifyContent="center",()))>
+
+        <TikTacToe/>
     </div>
   </>;
 };
